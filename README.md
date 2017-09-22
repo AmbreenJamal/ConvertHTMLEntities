@@ -27,10 +27,12 @@ function convertHTML(string) {<br />
     return string;<br />
 
 }<br />
-var HtmlEntities= {<br />
-  "&":"&amp;",
-  "<":"&lt;",
-  ">":"&gt;",
-  '"':"&quot;",
-  "'":"&apos;"
-};
+var HtmlEntities= {  
+  "&":"&amp;",  
+  "<":"&lt;",  
+  ">":"&gt;",  
+  '"':"&quot;",  
+  "'":"&apos;"  
+};    
+
+convertHTML('Hamburgers < Pizza < Tacos');
