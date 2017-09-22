@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+<h2>Convert HTML Entities</h2>
+
+<p>Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.</p>
+<ul>
+<li>convertHTML("Dolce & Gabbana") should return Dolce &​amp; Gabbana.</li>
+<li>convertHTML("Hamburgers < Pizza < Tacos") should return Hamburgers &​lt; Pizza &​lt; Tacos.</li>
+<li>convertHTML("Sixty > twelve") should return Sixty &​gt; twelve.</li>
+<li>convertHTML('Stuff in "quotation marks"') should return Stuff in &​quot;quotation marks&​quot;.</i>
+<li>convertHTML("Shindler's List") should return Shindler&​apos;s List.</li>
+<li>convertHTML("<>") should return &​lt;&​gt;.</li>
+<li>convertHTML("abc") should return abc.</li>
+</ul>
+</p><br/>
+<p>======================================================</p>
+<p id="orignal"></p>..........................
+<p id="demo"></p>
+<script>
+function convertHTML(string) {
+
+    for (var key in HtmlEntities) {
+        var entity = HtmlEntities[key];
+        var regex = new RegExp(key, 'g');
+        string = string.replace(regex, entity);
+    }
+    return string;
+
+}
+var HtmlEntities= {
+  "&":"&amp;",
+  "<":"&lt;",
+  ">":"&gt;",
+  '"':"&quot;",
+  "'":"&apos;"
+};
+console.log(convertHTML('Hamburgers < Pizza < Tacos'));	
+document.getElementById("orignal").innerHTML='Hamburgers < Pizza < Tacos';
+document.getElementById("demo").innerHTML=convertHTML('Hamburgers < Pizza < Tacos');
+</script>
+</body>
+</html>
