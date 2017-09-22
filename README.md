@@ -1,33 +1,33 @@
-# ConvertHTMLEntities
+# ConvertHTMLEntities<br />
 
-#copy in html file and run or downlod and run html file.
-
-
-Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
-
-convertHTML("Dolce & Gabbana") should return Dolce &?amp; Gabbana.
-convertHTML("Hamburgers < Pizza < Tacos") should return Hamburgers &?lt; Pizza &?lt; Tacos.
-convertHTML("Hamburgers < Pizza < Tacos") should return Hamburgers &?lt; Pizza &?lt; Tacos.
-convertHTML("Sixty > twelve") should return Sixty &?gt; twelve.
-convertHTML('Stuff in "quotation marks"') should return Stuff in &?quot;quotation marks&?quot;.
-convertHTML("Shindler's List") should return Shindler&?apos;s List.
-convertHTML("<>") should return &?lt;&?gt;.
-convertHTML("abc") should return abc.
-
-================================================================================
+#copy in html file and run or downlod and run html file.<br />
 
 
-function convertHTML(string) {
+Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.<br />
 
-    for (var key in HtmlEntities) {
-        var entity = HtmlEntities[key];
-        var regex = new RegExp(key, 'g');
-        string = string.replace(regex, entity);
-    }
-    return string;
+convertHTML("Dolce & Gabbana") should return Dolce &?amp; Gabbana.<br />
+convertHTML("Hamburgers < Pizza < Tacos") should return Hamburgers &?lt; Pizza &?lt; Tacos.<br />
+convertHTML("Hamburgers < Pizza < Tacos") should return Hamburgers &?lt; Pizza &?lt; Tacos.<br />
+convertHTML("Sixty > twelve") should return Sixty &?gt; twelve.<br />
+convertHTML('Stuff in "quotation marks"') should return Stuff in &?quot;quotation marks&?quot;.<br />
+convertHTML("Shindler's List") should return Shindler&?apos;s List.<br />
+convertHTML("<>") should return &?lt;&?gt;.<br />
+convertHTML("abc") should return abc.<br />
 
-}
-var HtmlEntities= {
+================================================================================<br />
+<br />
+<br />
+function convertHTML(string) {<br />
+
+    for (var key in HtmlEntities) {<br />
+        var entity = HtmlEntities[key];<br />
+        var regex = new RegExp(key, 'g');<br />
+        string = string.replace(regex, entity);<br />
+    }<br />
+    return string;<br />
+
+}<br />
+var HtmlEntities= {<br />
   "&":"&amp;",
   "<":"&lt;",
   ">":"&gt;",
